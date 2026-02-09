@@ -1,0 +1,51 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+venv12/
+antenv/
+.env/
+.python_packages/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+*.out
+
+# Build artifacts
+*.zip
+*.tar
+*.gz
+dist/
+build/
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Editors / IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure / deployment temp
+app.zip
+config.zip
+
+# Large debug/temp files
+*.sqlite
+*.db

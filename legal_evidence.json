@@ -1,0 +1,82 @@
+{
+  "queried_title": "The Saint, the Surfer, and the CEO",
+  "assessment_type": "Copyright availability & infringement risk",
+  "legitimate_availability": [
+    {
+      "source": "Open Library",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://openlibrary.org/works/OL1854811W",
+      "link_type": "catalog_record",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "Google Books",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://play.google.com/store/books/details?id=cSBnDwAAQBAJ&source=gbs_api",
+      "link_type": "preview_page",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "Google Books",
+      "title": "Saint, The Surfer, And The Ceo",
+      "url": "http://books.google.co.in/books?id=huGuSQAACAAJ&dq=intitle:The+Saint,+the+Surfer,+and+the+CEO&hl=&source=gbs_api",
+      "link_type": "preview_page",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "British Library",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://explore.bl.uk/search?q=The+Saint%2C+the+Surfer%2C+and+the+CEO",
+      "link_type": "catalog_search",
+      "raw_score": 100.0,
+      "weighted_score": 90.0
+    }
+  ],
+  "alternate_legitimate_editions": [],
+  "high_risk_distribution_signals": [
+    {
+      "source": "LibGen",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://libgen.li/index.php?req=The+Saint%2C+the+Surfer%2C+and+the+CEO&res=25",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library. Search page only.",
+      "raw_score": 100.0,
+      "weighted_score": 40.0
+    },
+    {
+      "source": "LibGen",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://libgen.rs/search.php?req=The+Saint%2C+the+Surfer%2C+and+the+CEO",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library. Search page only.",
+      "raw_score": 100.0,
+      "weighted_score": 40.0
+    },
+    {
+      "source": "LibGen",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://libgen.is/search.php?req=The+Saint%2C+the+Surfer%2C+and+the+CEO",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library. Search page only.",
+      "raw_score": 100.0,
+      "weighted_score": 40.0
+    },
+    {
+      "source": "Z-Library",
+      "title": "The Saint, the Surfer, and the CEO",
+      "url": "https://z-library.se/s/The+Saint%2C+the+Surfer%2C+and+the+CEO",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library. Search page only.",
+      "raw_score": 100.0,
+      "weighted_score": 40.0
+    }
+  ],
+  "risk_summary": {
+    "legitimate_sources_detected": 4,
+    "shadow_library_signals": 4,
+    "overall_risk_level": "HIGH"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "queried_metadata": {
+    "title": "The Dinner",
+    "author": "Anna Davis",
+    "isbn": null
+  },
+  "assessment_type": "Copyright availability & infringement risk",
+  "legitimate_availability": [
+    {
+      "source": "Open Library",
+      "title": "The dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://openlibrary.org/works/OL24261000W",
+      "link_type": "catalog_record",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "Open Library",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://openlibrary.org/works/OL5969511W",
+      "link_type": "catalog_record",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "Google Books",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": "0340718412",
+      "url": "http://books.google.co.in/books?id=4VJ6QgAACAAJ&dq=intitle:The+Dinner+inauthor:Anna+Davis&hl=&source=gbs_api",
+      "link_type": "preview_page",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "British Library",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://explore.bl.uk/search?q=The+Dinner+Anna+Davis",
+      "link_type": "catalog_search",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    }
+  ],
+  "alternate_legitimate_editions": [],
+  "high_risk_distribution_signals": [
+    {
+      "source": "LibGen",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://libgen.li/index.php?req=The+Dinner&res=25",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library (search page only)",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "LibGen",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://libgen.rs/search.php?req=The+Dinner",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library (search page only)",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "LibGen",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://libgen.is/search.php?req=The+Dinner",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library (search page only)",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    },
+    {
+      "source": "Z-Library",
+      "title": "The Dinner",
+      "author": "Anna Davis",
+      "isbn": null,
+      "url": "https://z-library.se/s/The+Dinner",
+      "link_type": "search_page",
+      "legal_note": "High-risk shadow library (search page only)",
+      "raw_score": 100.0,
+      "weighted_score": 100.0
+    }
+  ],
+  "risk_summary": {
+    "legitimate_sources_detected": 4,
+    "shadow_library_signals": 4,
+    "overall_risk_level": "HIGH"
+  }
+}
