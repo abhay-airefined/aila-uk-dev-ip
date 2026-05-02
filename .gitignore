@@ -49,3 +49,4 @@ config.zip
 # Large debug/temp files
 *.sqlite
 *.db
+mem0.zip

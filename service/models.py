@@ -82,3 +82,33 @@ class Classification(BaseModel):
 class CaseMemorandum(BaseModel):
     english_markdown_memorandum: str
     arabic_markdown_memorandum: str
+
+class NumericalDamageItem(BaseModel):
+    category: str
+    description: str
+    amount_claimed: Optional[str] = None
+    amount_supported: Optional[str] = None
+    calculation: str
+    source_evidence: str
+    dispute_or_uncertainty: str
+    likely_recoverability: Literal["Strong", "Moderate", "Weak", "Unclear"]
+    confidence_score: int
+
+class NonNumericDamageFactor(BaseModel):
+    factor: str
+    impact: str
+    evidence: str
+    valuation_note: str
+
+class DamageBreakdown(BaseModel):
+    executive_summary: str
+    currency_and_assumptions: List[str]
+    numerical_breakdown: List[NumericalDamageItem]
+    non_numeric_breakdown: List[NonNumericDamageFactor]
+    case_breakdown: List[str]
+    total_claimed: str
+    total_supported: str
+    disputed_or_unclear_amounts: List[str]
+    evidence_gaps: List[str]
+    practical_next_steps: List[str]
+    settlement_or_remedy_view: str

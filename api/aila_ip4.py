@@ -21,7 +21,7 @@ MIN_RAW_SIMILARITY = 30
 REQUEST_TIMEOUT = 10
 
 LIBGEN_MIRRORS = [
-    "https://libgen.li/index.php?req={q}&res=25",
+    "https://libgen.li/index.php?req={q}&columns[]=t&columns[]=a&columns[]=s&columns[]=y&columns[]=p&columns[]=i&objects[]=f&objects[]=e&objects[]=s&objects[]=a&objects[]=p&objects[]=w&topics[]=l&topics[]=c&topics[]=f&topics[]=a&topics[]=m&topics[]=r&topics[]=s&res=25&filesuns=all",
     "https://libgen.rs/search.php?req={q}",
     "https://libgen.is/search.php?req={q}",
 ]
@@ -110,14 +110,17 @@ def fetch_british_library(title=None, author=None):
     if not q:
         return []
 
-    return [{
-        "source": "British Library",
-        "title": title,
-        "author": author,
-        "isbn": None,
-        "url": f"https://explore.bl.uk/search?q={quote_plus(q)}",
-        "link_type": "catalog_search"
-    }]
+    # Only return British Library link if we have high confidence (title or both title+author)
+    if title:
+        return [{
+            "source": "British Library",
+            "title": title,
+            "author": author,
+            "isbn": None,
+            "url": f"https://explore.bl.uk/search?q={quote_plus(q)}",
+            "link_type": "catalog_search"
+        }]
+    return []
 
 def fetch_loc(title=None, author=None):
     q = " ".join(filter(None, [title, author]))
@@ -142,33 +145,47 @@ def fetch_loc(title=None, author=None):
     return results
 
 def fetch_shadow_sources(title=None, author=None, isbn=None):
-    q = title or author or isbn
+    # Build search query with highest specificity
+    q = None
+    if title and author:
+        q = f"{title} {author}"
+    elif title:
+        q = title
+    elif isbn:
+        q = isbn
+    elif author:
+        q = author
+    
     if not q:
         return []
 
     encoded = quote_plus(q)
     results = []
 
-    for mirror in LIBGEN_MIRRORS:
+    # Only include LibGen if we have title-based confidence
+    if title:
+        for mirror in LIBGEN_MIRRORS:
+            results.append({
+                "source": "LibGen",
+                "title": title,
+                "author": author,
+                "isbn": isbn,
+                "url": mirror.format(q=encoded),
+                "link_type": "search_page",
+                "legal_note": "High-risk shadow library (search page only)"
+            })
+
+    # Only include Z-Library if we have title-based confidence
+    if title:
         results.append({
-            "source": "LibGen",
+            "source": "Z-Library",
             "title": title,
             "author": author,
             "isbn": isbn,
-            "url": mirror.format(q=encoded),
+            "url": f"https://z-lib.id/s?q={encoded}",
             "link_type": "search_page",
             "legal_note": "High-risk shadow library (search page only)"
         })
-
-    results.append({
-        "source": "Z-Library",
-        "title": title,
-        "author": author,
-        "isbn": isbn,
-        "url": f"https://z-library.se/s/{encoded}",
-        "link_type": "search_page",
-        "legal_note": "High-risk shadow library (search page only)"
-    })
 
     return results
 
@@ -197,6 +214,11 @@ def score_results(title, results, isbn=None, author=None):
 
         if raw < MIN_RAW_SIMILARITY:
             continue
+
+        # For shadow sources, require higher confidence
+        if r["source"] in ["LibGen", "Z-Library", "British Library"]:
+            if raw < 70:
+                continue
 
         weight = SOURCE_WEIGHTS.get(r["source"], 0.5)
         scored.append({
